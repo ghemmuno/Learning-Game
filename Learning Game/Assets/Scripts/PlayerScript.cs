@@ -8,11 +8,12 @@ public class PlayerScript : MonoBehaviour
     public NodeScript currentNode;
     private bool atEnd = false;
     public Items heldItem;
+    public GameObject successMenu;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        successMenu.SetActive(false);
     }
 
     // Update is called once per frame
@@ -22,6 +23,7 @@ public class PlayerScript : MonoBehaviour
         {
             Debug.Log("Successfully completed level!");
             atEnd = true;
+            successMenu.SetActive(true);
         }
 
 

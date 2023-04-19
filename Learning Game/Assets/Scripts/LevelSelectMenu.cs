@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelSelectMenu : MonoBehaviour
 {
@@ -70,4 +71,6 @@ public class LevelSelectMenu : MonoBehaviour
         backButton.SetActive(page > 0);
         nextButton.SetActive(page < totalPage);
     }
+
+    
 }
