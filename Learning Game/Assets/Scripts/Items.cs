@@ -26,4 +26,11 @@ public abstract class Items : MonoBehaviour
         if(isUsed) { return "used"; }
         else { return "error"; }
     }
+
+    public void resetItem()
+    {
+        onGrid = true;
+        isHeld = false;
+        isUsed = false;
+    }
 }

@@ -41,6 +41,17 @@ public class NodeParentScript : MonoBehaviour
         
     }
 
+    public void resetPlayer()
+    {
+        player.currentNode = startNode;
+        player.goToCurrent();
+        if (player.holdingItem())
+        {
+            player.heldItem.resetItem();
+            player.heldItem = null;
+        }
+    }
+
     public void move(string direction)
     {
         switch (direction)

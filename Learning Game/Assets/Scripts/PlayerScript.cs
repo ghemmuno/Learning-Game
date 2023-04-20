@@ -26,7 +26,7 @@ public class PlayerScript : MonoBehaviour
             successMenu.SetActive(true);
         }
 
-
+        /*
         if (Input.GetKeyDown(KeyCode.W))
         {
             moveUp();
@@ -50,7 +50,7 @@ public class PlayerScript : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.X))
         {
             useItem();
-        }
+        }*/
     }
 
     public bool holdingItem()
@@ -188,5 +188,10 @@ public class PlayerScript : MonoBehaviour
         {
             Debug.Log("Player not holding item or event is not nearby");
         }
+    }
+
+    public void say(string words)
+    {
+        Debug.Log("Say is called: " + words);
     }
 }
