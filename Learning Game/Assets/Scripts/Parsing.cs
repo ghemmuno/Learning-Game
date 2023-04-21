@@ -90,6 +90,38 @@ public class Parsing : MonoBehaviour
             str = getStrParameters(parseParentheses(x));
             player.say(str);
         }
+        //new code from Mus
+        else if (x.Contains("for"))
+        {
+            int loopNum = getIntParameters(parseParentheses(x));
+            Debug.Log("Executing " + loopNum + " times");
+            if (x.Contains("moveLeft"))
+                {
+                    num = getIntParameters(parseParentheses(x));
+                    Debug.Log("Move Left " + num + " spaces");
+                    player.moveLeft(loopNum);
+                }
+                else if (x.Contains("moveRight"))
+                {
+                    num = getIntParameters(parseParentheses(x));
+                    Debug.Log("Move Right " + num + " spaces");
+                    player.moveRight(loopNum);
+                }
+                else if (x.Contains("moveUp"))
+                {
+                    num = getIntParameters(parseParentheses(x));
+                    Debug.Log("Move Up " + num + " spaces");
+                    player.moveUp(loopNum);
+                    
+                }
+                else if (x.Contains("moveDown"))
+                {
+                    num = getIntParameters(parseParentheses(x));
+                    Debug.Log("Move Down " + num + " spaces");
+                    player.moveDown(loopNum);
+                }
+            
+        }
     }
 
     string parseParentheses(string x)

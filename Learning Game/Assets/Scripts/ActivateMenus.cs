@@ -6,6 +6,7 @@ public class ActivateMenus : MonoBehaviour
 {
     public GameObject hints;
     public GameObject lesson;
+    public GameObject locked;
 
     public void setActive()
     {
@@ -27,6 +28,10 @@ public class ActivateMenus : MonoBehaviour
         {
             lesson.SetActive(true);
         }
+        if (menu.Equals("locked"))
+        {
+            locked.SetActive(true);
+        }
     }
 
     public void setMenuInactive(string menu)
@@ -38,6 +43,10 @@ public class ActivateMenus : MonoBehaviour
         if (menu.Equals("lesson"))
         {
             lesson.SetActive(false);
+        }
+        if (menu.Equals("locked"))
+        {
+            locked.SetActive(false);
         }
     }
 }
