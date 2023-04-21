@@ -46,7 +46,11 @@ public class LevelSelectMenu : MonoBehaviour
 
     public void Refresh()
     {
-        totalPage = totalLevel / pageItem;
+        totalPage = (totalLevel / pageItem);
+        if(totalLevel % pageItem == 0)
+        {
+            totalPage--;
+        }
         int index = page * pageItem;
         for(int i=0; i<levelButtons.Length; i++)
         {

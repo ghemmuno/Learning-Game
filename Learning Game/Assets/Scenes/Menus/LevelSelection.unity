@@ -2000,7 +2000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalLevel: 12
-  unlockedLevel: 2
+  unlockedLevel: 6
   nextButton: {fileID: 75889832}
   backButton: {fileID: 1961860596}
 --- !u!1 &1297199553

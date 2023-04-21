@@ -44,6 +44,7 @@ public class Parsing : MonoBehaviour
         parseParentheses(arr[0]);
         foreach(string line in arr)
         {
+            Debug.Log("Parsing " + line);
             funMatch(line);
         }
     }
@@ -96,24 +97,18 @@ public class Parsing : MonoBehaviour
         //get parameter inside parentheses, make sure there are parentheses
         if(x.Contains("("))
         {
-            int leftPar = x.IndexOf('(') + 1;
-            if (x.Length != 0 && x.Substring(x.Length - 1).Equals(")"))
-            {
-                int len = x.Length - 1;
-                x = x.Substring(leftPar, (len - leftPar));
-                Debug.Log(x);
-                return x;
-            }
+            x = x.Split('(', ')')[1];
+            Debug.Log(x);
+            return x;
         }
-        
-
         return "";
     }
 
     int getIntParameters(string x)
     {
-        if(x.Length != 0)
+        if(x.Length > 0)
         {
+            Debug.Log(x);
             return int.Parse(x);
         }
         return 1;
@@ -124,9 +119,11 @@ public class Parsing : MonoBehaviour
         {
             if (x.StartsWith("\"") && x.EndsWith("\""))
             {
-                return x.Substring(1, x.Length - 1);
+                x = x.Split('\"', '\"')[1];
+                Debug.Log(x);
+                return x;
             }
-            return "Invalid";
+            return "";
         }
         return "";
     }
