@@ -434,6 +434,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 851789981}
     - target: {fileID: 7995134455004826824, guid: eb05b28c77ae4b0469586da32a146380, type: 3}
+      propertyPath: m_VersionIndex
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7995134455004826824, guid: eb05b28c77ae4b0469586da32a146380, type: 3}
       propertyPath: m_MeshFormatVersion
       value: 2
       objectReference: {fileID: 0}
@@ -1983,7 +1987,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-87730
+  m_Name: pb_Mesh-3346
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2475,7 +2479,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-87462
+  m_Name: pb_Mesh-3074
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2666,7 +2670,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3576806437289378724, guid: cd5bc009d5485bd40871426feaf882b3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.5772889
+      value: -2.99
       objectReference: {fileID: 0}
     - target: {fileID: 3576806437289378724, guid: cd5bc009d5485bd40871426feaf882b3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2674,7 +2678,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3576806437289378724, guid: cd5bc009d5485bd40871426feaf882b3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.638048
+      value: -4.03
       objectReference: {fileID: 0}
     - target: {fileID: 3576806437289378724, guid: cd5bc009d5485bd40871426feaf882b3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2704,6 +2708,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3576806437289378725, guid: cd5bc009d5485bd40871426feaf882b3, type: 3}
+      propertyPath: doorMenu
+      value: 
+      objectReference: {fileID: 996544844}
     - target: {fileID: 3576806437304163637, guid: cd5bc009d5485bd40871426feaf882b3, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -2716,6 +2724,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 764903481}
+    - target: {fileID: 3576806437304163640, guid: cd5bc009d5485bd40871426feaf882b3, type: 3}
+      propertyPath: m_VersionIndex
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd5bc009d5485bd40871426feaf882b3, type: 3}
 --- !u!114 &981022418 stripped
@@ -3740,7 +3752,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-87894
+  m_Name: pb_Mesh-3510
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6183,7 +6195,7 @@ PrefabInstance:
       objectReference: {fileID: 1816517464}
     - target: {fileID: 957319134690886236, guid: 3f6a02338a837f2488532a7b3d217cd6, type: 3}
       propertyPath: m_VersionIndex
-      value: 3634
+      value: 3637
       objectReference: {fileID: 0}
     - target: {fileID: 2317595290472255461, guid: 3f6a02338a837f2488532a7b3d217cd6, type: 3}
       propertyPath: m_Name

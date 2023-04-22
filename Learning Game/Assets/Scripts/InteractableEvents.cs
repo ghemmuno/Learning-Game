@@ -14,6 +14,8 @@ public abstract class InteractableEvents : MonoBehaviour
     //Keep track of the interactions with an event
     public bool isClosed = true;
 
+    public GameObject doorMenu;
+
 
     //FUNCTIONS
     //Use the input item on this event, make sure the item is the correct one
@@ -28,10 +30,14 @@ public abstract class InteractableEvents : MonoBehaviour
         {
             Debug.Log("Door is already open.");
         }
-        else 
+        else if(isClosed) 
         {
-            Debug.Log("Item does not work on this door.");
+            doorMenu.SetActive(true);
         }
+    }
+    
+    public void DoorMenu(){
+        doorMenu.SetActive(true);
     }
 
     //Match the item intended to be used on an event
