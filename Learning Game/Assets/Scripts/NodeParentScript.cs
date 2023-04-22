@@ -13,7 +13,8 @@ public class NodeParentScript : MonoBehaviour
     void Start()
     {
         NodeScript[] children = this.gameObject.GetComponentsInChildren<NodeScript>();
-        /*for (int i = 0; i < children.Length; i++)
+        /* debug printing
+        for (int i = 0; i < children.Length; i++)
         {
             NodeScript child = children[i];
             //Debug.Log(child.name);
@@ -23,7 +24,11 @@ public class NodeParentScript : MonoBehaviour
         endNode.isEndingNode = true;
 
         player.currentNode = startNode;
-        player.goToCurrent();
+
+        //leave as an instantaneous teleport
+        player.goToInstantly();
+
+        //example
         /*player.moveUp(2);
         player.grabItem();
         player.moveUp(2);
@@ -44,11 +49,20 @@ public class NodeParentScript : MonoBehaviour
     public void resetPlayer()
     {
         player.currentNode = startNode;
-        player.goToCurrent();
+        player.goToInstantly();
         if (player.holdingItem())
         {
             player.heldItem.resetItem();
             player.heldItem = null;
+            NodeScript temp = null;
+            foreach(NodeScript child in children)
+            {
+                temp = child.checkForEvent();
+                if(temp != null)
+                {
+                    temp.interactEvent.Reset();
+                }
+            }
         }
     }
 

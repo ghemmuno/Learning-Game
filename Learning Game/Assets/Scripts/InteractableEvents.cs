@@ -14,6 +14,10 @@ public abstract class InteractableEvents : MonoBehaviour
     //Keep track of the interactions with an event
     public bool isClosed = true;
 
+    public void Reset()
+    {
+        isClosed = true;
+    }
 
     //FUNCTIONS
     //Use the input item on this event, make sure the item is the correct one

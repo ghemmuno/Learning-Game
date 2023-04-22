@@ -587,6 +587,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hints: {fileID: 1663856128}
   lesson: {fileID: 598304996}
+  locked: {fileID: 0}
 --- !u!1 &472461338
 GameObject:
   m_ObjectHideFlags: 0
@@ -5259,7 +5260,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1970577399}
         m_TargetAssemblyTypeName: Parsing, Assembly-CSharp
-        m_MethodName: showUserInputDebug
+        m_MethodName: FunExeInput
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

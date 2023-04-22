@@ -10,17 +10,10 @@ public class Parsing : MonoBehaviour
     public TMP_Text userInput;
     public PlayerScript player;
     public NodeParentScript nodeParent;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public string getUserInput()
     {
-        
+        return userInput.text;
     }
 
     public void showUserInputDebug()
@@ -28,13 +21,6 @@ public class Parsing : MonoBehaviour
         //Debug.Log("User input: \n" + getUserInput());
         parse();
     }
-
-    public string getUserInput()
-    {
-        return userInput.text;
-    }
-
-    //so
 
     void parse()
     {
@@ -158,5 +144,105 @@ public class Parsing : MonoBehaviour
             return "";
         }
         return "";
+    }
+
+
+
+
+
+
+    //IENUMERATOR FOR GRADUAL MOVEMENT
+    public void FunExeInput()
+    {
+        //Debug.Log("User input: \n" + getUserInput());
+        StartCoroutine(FunParse());
+    }
+    IEnumerator FunParse()
+    {
+        nodeParent.resetPlayer();
+        string input = getUserInput();
+        string[] arr = input.Split('\n');
+        parseParentheses(arr[0]);
+        foreach (string line in arr)
+        {
+            Debug.Log("Parsing " + line);
+            yield return StartCoroutine(FunMatch(line));
+        }
+    }
+
+    IEnumerator FunMatch(string x)
+    {
+        int num = 1;
+        string str = "";
+        if (x.Contains("moveLeft"))
+        {
+            num = getIntParameters(parseParentheses(x));
+            Debug.Log("Move Left " + num + " spaces");
+            yield return StartCoroutine(player.MoveL(num));
+        }
+        else if (x.Contains("moveRight"))
+        {
+            num = getIntParameters(parseParentheses(x));
+            Debug.Log("Move Right " + num + " spaces");
+            yield return StartCoroutine(player.MoveR(num));
+        }
+        else if (x.Contains("moveUp"))
+        {
+            num = getIntParameters(parseParentheses(x));
+            Debug.Log("Move Up " + num + " spaces");
+            yield return StartCoroutine(player.MoveU(num));
+        }
+        else if (x.Contains("moveDown"))
+        {
+            num = getIntParameters(parseParentheses(x));
+            Debug.Log("Move Down " + num + " spaces");
+            yield return StartCoroutine(player.MoveD(num));
+        }
+        else if (x.Contains("grabItem()"))
+        {
+            yield return StartCoroutine(player.GrabItem());
+        }
+        else if (x.Contains("useItem()"))
+        {
+            yield return StartCoroutine(player.UseItem());
+        }
+        else if (x.Contains("say"))
+        {
+            str = getStrParameters(parseParentheses(x));
+            yield return StartCoroutine(player.Say(str));
+        }
+        //new code from Mus
+        /*
+        else if (x.Contains("for"))
+        {
+            int loopNum = getIntParameters(parseParentheses(x));
+            Debug.Log("Executing " + loopNum + " times");
+            if (x.Contains("moveLeft"))
+            {
+                num = getIntParameters(parseParentheses(x));
+                Debug.Log("Move Left " + num + " spaces");
+                player.moveLeft(loopNum);
+            }
+            else if (x.Contains("moveRight"))
+            {
+                num = getIntParameters(parseParentheses(x));
+                Debug.Log("Move Right " + num + " spaces");
+                player.moveRight(loopNum);
+            }
+            else if (x.Contains("moveUp"))
+            {
+                num = getIntParameters(parseParentheses(x));
+                Debug.Log("Move Up " + num + " spaces");
+                player.moveUp(loopNum);
+
+            }
+            else if (x.Contains("moveDown"))
+            {
+                num = getIntParameters(parseParentheses(x));
+                Debug.Log("Move Down " + num + " spaces");
+                player.moveDown(loopNum);
+            }
+
+        }*/
     }
 }
