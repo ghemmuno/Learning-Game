@@ -1081,6 +1081,10 @@ PrefabInstance:
       propertyPath: nodeParent
       value: 
       objectReference: {fileID: 812747724870924004}
+    - target: {fileID: 1699815065949410243, guid: ca14a232cef8e3b49b057ba727feb625, type: 3}
+      propertyPath: m_text
+      value: --Lesson 5--
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca14a232cef8e3b49b057ba727feb625, type: 3}
 --- !u!43 &401588501
@@ -3791,7 +3795,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1719533758}
   m_LocalRotation: {x: 0.4777144, y: 0.5213339, z: -0.4777144, w: 0.5213339}
-  m_LocalPosition: {x: 1.6, y: 26.1, z: -2.56}
+  m_LocalPosition: {x: 1.6, y: 26.1, z: -3.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
