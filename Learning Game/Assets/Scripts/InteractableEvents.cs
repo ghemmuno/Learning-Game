@@ -16,6 +16,10 @@ public abstract class InteractableEvents : MonoBehaviour
 
     public GameObject doorMenu;
 
+    public void Reset()
+    {
+        isClosed = true;
+    }
 
     //FUNCTIONS
     //Use the input item on this event, make sure the item is the correct one
