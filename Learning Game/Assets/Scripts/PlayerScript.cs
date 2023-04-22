@@ -9,7 +9,7 @@ public class PlayerScript : MonoBehaviour
     private bool atEnd = false;
     public Items heldItem;
     public GameObject successMenu;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -363,6 +363,11 @@ public class PlayerScript : MonoBehaviour
             Debug.Log("Player is holding item and event is nearby");
             eNode.interactEvent.interact(heldItem);
             eNode.setVisit(true);
+        } 
+        else if(!holdingItem() && eNode != null)
+        {
+            Debug.Log("Player is not holding item and event is nearby");
+            eNode.interactEvent.DoorMenu();
         }
         else
         {

@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-23178
+  m_Name: pb_Mesh-87990
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -433,6 +433,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 851789981}
+    - target: {fileID: 7995134455004826824, guid: eb05b28c77ae4b0469586da32a146380, type: 3}
+      propertyPath: m_VersionIndex
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7995134455004826824, guid: eb05b28c77ae4b0469586da32a146380, type: 3}
       propertyPath: m_MeshFormatVersion
       value: 2
@@ -1453,7 +1457,7 @@ PrefabInstance:
       objectReference: {fileID: 812747724870924004}
     - target: {fileID: 1699815065286013561, guid: ca14a232cef8e3b49b057ba727feb625, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 286.2
+      value: 350
       objectReference: {fileID: 0}
     - target: {fileID: 1699815065286013561, guid: ca14a232cef8e3b49b057ba727feb625, type: 3}
       propertyPath: m_LocalScale.x
@@ -1479,26 +1483,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 275
       objectReference: {fileID: 0}
-    - target: {fileID: 1699815065463172946, guid: ca14a232cef8e3b49b057ba727feb625, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -53.3
-      objectReference: {fileID: 0}
     - target: {fileID: 1699815065463172949, guid: ca14a232cef8e3b49b057ba727feb625, type: 3}
       propertyPath: m_text
-      value: 'Now, to interact with the environment! Notice there''s a locked door...
-        try to get through there to the end!
-
-
-        Pick up the key using grabItem(),
-        then approach the door and use the key with useItem()!'
-      objectReference: {fileID: 0}
-    - target: {fileID: 1699815065463172949, guid: ca14a232cef8e3b49b057ba727feb625, type: 3}
-      propertyPath: m_fontSize
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 1699815065463172949, guid: ca14a232cef8e3b49b057ba727feb625, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 18
+      value: "Now, you'll learn about the \"if\" statement!\nThe door here has the
+        following statement: \n\nif(key) {openDoor()}\n\nuse grabItem() on the key,
+        and useItem() on the door!"
       objectReference: {fileID: 0}
     - target: {fileID: 1699815065508711309, guid: ca14a232cef8e3b49b057ba727feb625, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1515,10 +1504,6 @@ PrefabInstance:
     - target: {fileID: 1699815065508711309, guid: ca14a232cef8e3b49b057ba727feb625, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: ActivateMenus, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1699815065949410243, guid: ca14a232cef8e3b49b057ba727feb625, type: 3}
-      propertyPath: m_text
-      value: --Lesson 3--
       objectReference: {fileID: 0}
     - target: {fileID: 1699815066213934589, guid: ca14a232cef8e3b49b057ba727feb625, type: 3}
       propertyPath: m_IsActive
@@ -1602,7 +1587,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-23294
+  m_Name: pb_Mesh-88106
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2002,7 +1987,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-22918
+  m_Name: pb_Mesh-3346
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2166,7 +2151,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-23134
+  m_Name: pb_Mesh-87946
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2330,7 +2315,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-23050
+  m_Name: pb_Mesh-87862
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2494,7 +2479,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-22646
+  m_Name: pb_Mesh-3074
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2685,7 +2670,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3576806437289378724, guid: cd5bc009d5485bd40871426feaf882b3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.5772889
+      value: -2.99
       objectReference: {fileID: 0}
     - target: {fileID: 3576806437289378724, guid: cd5bc009d5485bd40871426feaf882b3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2693,7 +2678,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3576806437289378724, guid: cd5bc009d5485bd40871426feaf882b3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.638048
+      value: -4.03
       objectReference: {fileID: 0}
     - target: {fileID: 3576806437289378724, guid: cd5bc009d5485bd40871426feaf882b3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2723,6 +2708,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3576806437289378725, guid: cd5bc009d5485bd40871426feaf882b3, type: 3}
+      propertyPath: doorMenu
+      value: 
+      objectReference: {fileID: 996544844}
     - target: {fileID: 3576806437304163637, guid: cd5bc009d5485bd40871426feaf882b3, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -2735,6 +2724,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 764903481}
+    - target: {fileID: 3576806437304163640, guid: cd5bc009d5485bd40871426feaf882b3, type: 3}
+      propertyPath: m_VersionIndex
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd5bc009d5485bd40871426feaf882b3, type: 3}
 --- !u!114 &981022418 stripped
@@ -2836,7 +2829,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-23062
+  m_Name: pb_Mesh-87874
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3759,7 +3752,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-23082
+  m_Name: pb_Mesh-3510
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4056,7 +4049,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh42666
+  m_Name: pb_Mesh57148
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6202,7 +6195,7 @@ PrefabInstance:
       objectReference: {fileID: 1816517464}
     - target: {fileID: 957319134690886236, guid: 3f6a02338a837f2488532a7b3d217cd6, type: 3}
       propertyPath: m_VersionIndex
-      value: 3634
+      value: 3637
       objectReference: {fileID: 0}
     - target: {fileID: 2317595290472255461, guid: 3f6a02338a837f2488532a7b3d217cd6, type: 3}
       propertyPath: m_Name
