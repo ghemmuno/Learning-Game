@@ -399,6 +399,10 @@ PrefabInstance:
       propertyPath: nodeParent
       value: 
       objectReference: {fileID: 812747724870924004}
+    - target: {fileID: 1699815064903550793, guid: ca14a232cef8e3b49b057ba727feb625, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FunExeInput
+      objectReference: {fileID: 0}
     - target: {fileID: 1699815065463172949, guid: ca14a232cef8e3b49b057ba727feb625, type: 3}
       propertyPath: m_text
       value: "Wait a moment... is that a different door? And there's no key? \n\nLooks
