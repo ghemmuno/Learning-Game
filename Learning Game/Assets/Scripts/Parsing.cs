@@ -175,7 +175,8 @@ public class Parsing : MonoBehaviour
     {
         int num = 1;
         string str = "";
-        if (x.Contains("moveLeft"))
+        if (x.Equals("")) { }
+        else if (x.Contains("moveLeft"))
         {
             num = getIntParameters(parseParentheses(x));
             Debug.Log("Move Left " + num + " spaces");

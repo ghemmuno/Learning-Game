@@ -52,7 +52,7 @@ public class NodeParentScript : MonoBehaviour
         player.goToInstantly();
         if (player.holdingItem())
         {
-            player.heldItem.simpleKey.SetActive(true);
+            //player.heldItem.simpleKey.SetActive(true);
             player.heldItem.resetItem();
             player.heldItem = null;
             NodeScript temp = null;
