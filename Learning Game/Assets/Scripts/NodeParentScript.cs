@@ -58,10 +58,13 @@ public class NodeParentScript : MonoBehaviour
             NodeScript temp = null;
             foreach(NodeScript child in children)
             {
-                temp = child.checkForEvent();
-                if(temp != null)
+                if(child != null)
                 {
-                    temp.interactEvent.Reset();
+                    temp = child.checkForEvent();
+                    if (temp != null)
+                    {
+                        temp.interactEvent.Reset();
+                    }
                 }
             }
         }

@@ -191,7 +191,6 @@ public class PlayerScript : MonoBehaviour
     {
         if (currentNode.hasItem())
         {
-            heldItem.simpleKey.SetActive(false);
             heldItem = currentNode.item;
             heldItem.onGrid = false;
             heldItem.isHeld = true;
@@ -354,6 +353,7 @@ public class PlayerScript : MonoBehaviour
         if (currentNode.hasItem())
         {
             heldItem = currentNode.item;
+            heldItem.simpleKey.SetActive(false);
             heldItem.onGrid = false;
             heldItem.isHeld = true;
             Debug.Log("You pick up the " + heldItem.itemName);
