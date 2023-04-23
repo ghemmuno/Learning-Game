@@ -12,7 +12,7 @@ public class NodeParentScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        NodeScript[] children = this.gameObject.GetComponentsInChildren<NodeScript>();
+        children = this.gameObject.GetComponentsInChildren<NodeScript>();
         /* debug printing
         for (int i = 0; i < children.Length; i++)
         {
