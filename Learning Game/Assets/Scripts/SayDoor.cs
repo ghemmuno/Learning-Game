@@ -2,19 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SayDoor : MonoBehaviour
+public class SayDoor : InteractableEvents
 {
-
-
-    // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        eventName = "password_door";
+        correctItem = "password";
     }
 }

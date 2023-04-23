@@ -210,7 +210,7 @@ public class PlayerScript : MonoBehaviour
         if (holdingItem() && eNode != null)
         {
             Debug.Log("Player is holding item and event is nearby");
-            eNode.interactEvent.interact(heldItem);
+            eNode.interactEvent.interact(heldItem.itemName);
             eNode.setVisit(true);
         }
         else
@@ -223,6 +223,24 @@ public class PlayerScript : MonoBehaviour
     public IEnumerator Say(string words)
     {
         Debug.Log("Say is called: " + words);
+        //Debug.Log("Say is called: " + words);
+        NodeScript eNode = currentNode.checkForEvent();
+
+        if (eNode != null)
+        {
+            Debug.Log("Player is holding item and event is nearby");
+            eNode.interactEvent.interact(words);
+            eNode.setVisit(true);
+        }
+        else if (eNode == null)
+        {
+            Debug.Log("No event is nearby");
+            eNode.interactEvent.DoorMenu();
+        }
+        else
+        {
+            Debug.Log("Password was incorrect");
+        }
         yield return new WaitForSeconds(0.1f);
     }
 
@@ -367,11 +385,11 @@ public class PlayerScript : MonoBehaviour
     public void useItem()
     {
         NodeScript eNode = currentNode.checkForEvent();
-        Debug.Log(eNode == null);
+        //Debug.Log(eNode == null);
         if (holdingItem() && eNode != null)
         {
             Debug.Log("Player is holding item and event is nearby");
-            eNode.interactEvent.interact(heldItem);
+            eNode.interactEvent.interact(heldItem.itemName);
             eNode.setVisit(true);
         } 
         else if(!holdingItem() && eNode != null)
@@ -388,5 +406,22 @@ public class PlayerScript : MonoBehaviour
     public void say(string words)
     {
         Debug.Log("Say is called: " + words);
+        NodeScript eNode = currentNode.checkForEvent();
+        
+        if (eNode != null)
+        {
+            Debug.Log("Player is holding item and event is nearby");
+            eNode.interactEvent.interact(words);
+            eNode.setVisit(true);
+        }
+        else if (eNode == null)
+        {
+            Debug.Log("No event is nearby");
+            eNode.interactEvent.DoorMenu();
+        }
+        else
+        {
+            Debug.Log("Password was incorrect");
+        }
     }
 }

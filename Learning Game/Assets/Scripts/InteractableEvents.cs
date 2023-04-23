@@ -23,7 +23,7 @@ public abstract class InteractableEvents : MonoBehaviour
 
     //FUNCTIONS
     //Use the input item on this event, make sure the item is the correct one
-    public void interact(Items key)
+    public void interact(string key)
     {
         if(matchItemAndEvent(key) && isClosed)
         {
@@ -45,9 +45,9 @@ public abstract class InteractableEvents : MonoBehaviour
     }
 
     //Match the item intended to be used on an event
-    public bool matchItemAndEvent(Items key)
+    public bool matchItemAndEvent(string key)
     {
-        if(key.itemName.Equals(correctItem))
+        if(key.Equals(correctItem))
         {
             Debug.Log("Key matches door.");
             return true;
