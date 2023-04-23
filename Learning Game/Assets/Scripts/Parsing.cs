@@ -39,7 +39,8 @@ public class Parsing : MonoBehaviour
     {
         int num = 1;
         string str = "";
-        if (x.Contains("moveLeft"))
+        if (x.Equals("")) { }
+        else if (x.Contains("moveLeft"))
         {
             num = getIntParameters(parseParentheses(x));
             Debug.Log("Move Left " + num + " spaces");
@@ -82,31 +83,31 @@ public class Parsing : MonoBehaviour
             int loopNum = getIntParameters(parseParentheses(x));
             Debug.Log("Executing " + loopNum + " times");
             if (x.Contains("moveLeft"))
-                {
-                    num = getIntParameters(parseParentheses(x));
-                    Debug.Log("Move Left " + num + " spaces");
-                    player.moveLeft(loopNum);
-                }
-                else if (x.Contains("moveRight"))
-                {
-                    num = getIntParameters(parseParentheses(x));
-                    Debug.Log("Move Right " + num + " spaces");
-                    player.moveRight(loopNum);
-                }
-                else if (x.Contains("moveUp"))
-                {
-                    num = getIntParameters(parseParentheses(x));
-                    Debug.Log("Move Up " + num + " spaces");
-                    player.moveUp(loopNum);
-                    
-                }
-                else if (x.Contains("moveDown"))
-                {
-                    num = getIntParameters(parseParentheses(x));
-                    Debug.Log("Move Down " + num + " spaces");
-                    player.moveDown(loopNum);
-                }
-            
+            {
+                num = getIntParameters(parseParentheses(x));
+                Debug.Log("Move Left " + num + " spaces");
+                player.moveLeft(loopNum);
+            }
+            else if (x.Contains("moveRight"))
+            {
+                num = getIntParameters(parseParentheses(x));
+                Debug.Log("Move Right " + num + " spaces");
+                player.moveRight(loopNum);
+            }
+            else if (x.Contains("moveUp"))
+            {
+                num = getIntParameters(parseParentheses(x));
+                Debug.Log("Move Up " + num + " spaces");
+                player.moveUp(loopNum);
+
+            }
+            else if (x.Contains("moveDown"))
+            {
+                num = getIntParameters(parseParentheses(x));
+                Debug.Log("Move Down " + num + " spaces");
+                player.moveDown(loopNum);
+            }
+
         }
     }
 

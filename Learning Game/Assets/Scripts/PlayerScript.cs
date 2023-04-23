@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
@@ -69,10 +71,17 @@ public class PlayerScript : MonoBehaviour
         yield return StartCoroutine(MoveObject(gameObject.transform.position, currentNode.transform.position, 0.5f));
     }
 
-    /*private IEnumerator LookAt()
+    private IEnumerator LookAt()
     {
-        Quaternion lookRotation = Quaternion.LookRotation(currentNode.);
-    }*/
+        float speed = 1f;
+        float time = 0;
+        while(time < 1)
+        {
+            Quaternion lookRotation = Quaternion.LookRotation(currentNode.transform.position - transform.position);
+            time += Time.deltaTime * speed;
+            yield return null;
+        }
+    }
 
     IEnumerator MoveObject(Vector3 source, Vector3 target, float overTime)
     {

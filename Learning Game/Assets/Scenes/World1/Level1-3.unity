@@ -1489,6 +1489,14 @@ PrefabInstance:
         following statement: \n\nif(key) {openDoor()}\n\nuse grabItem() on the key,
         and useItem() on the door!"
       objectReference: {fileID: 0}
+    - target: {fileID: 1699815065463172949, guid: ca14a232cef8e3b49b057ba727feb625, type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699815065463172949, guid: ca14a232cef8e3b49b057ba727feb625, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 1699815065508711309, guid: ca14a232cef8e3b49b057ba727feb625, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -1504,6 +1512,10 @@ PrefabInstance:
     - target: {fileID: 1699815065508711309, guid: ca14a232cef8e3b49b057ba727feb625, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: ActivateMenus, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699815065949410243, guid: ca14a232cef8e3b49b057ba727feb625, type: 3}
+      propertyPath: m_text
+      value: --Lesson 3--
       objectReference: {fileID: 0}
     - target: {fileID: 1699815066213934589, guid: ca14a232cef8e3b49b057ba727feb625, type: 3}
       propertyPath: m_IsActive
@@ -4049,7 +4061,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh57148
+  m_Name: pb_Mesh45126
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
