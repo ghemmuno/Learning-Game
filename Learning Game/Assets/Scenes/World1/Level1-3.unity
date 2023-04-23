@@ -435,7 +435,7 @@ PrefabInstance:
       objectReference: {fileID: 851789981}
     - target: {fileID: 7995134455004826824, guid: eb05b28c77ae4b0469586da32a146380, type: 3}
       propertyPath: m_VersionIndex
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7995134455004826824, guid: eb05b28c77ae4b0469586da32a146380, type: 3}
       propertyPath: m_MeshFormatVersion
@@ -1269,6 +1269,10 @@ PrefabInstance:
       propertyPath: m_Faces.Array.data[218].m_Uv.m_Offset.y
       value: -0.0000014305115
       objectReference: {fileID: 0}
+    - target: {fileID: 7995134455004826837, guid: eb05b28c77ae4b0469586da32a146380, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7995134455004826838, guid: eb05b28c77ae4b0469586da32a146380, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -1281,6 +1285,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Key
       objectReference: {fileID: 0}
+    - target: {fileID: 7995134455803874346, guid: eb05b28c77ae4b0469586da32a146380, type: 3}
+      propertyPath: simpleKey
+      value: 
+      objectReference: {fileID: 158348434}
     - target: {fileID: 7995134455803874347, guid: eb05b28c77ae4b0469586da32a146380, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1341,6 +1349,11 @@ MonoBehaviour:
 --- !u!4 &156432108 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7995134455803874347, guid: eb05b28c77ae4b0469586da32a146380, type: 3}
+  m_PrefabInstance: {fileID: 156432106}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &158348434 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7995134455004826837, guid: eb05b28c77ae4b0469586da32a146380, type: 3}
   m_PrefabInstance: {fileID: 156432106}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &331562611 stripped
@@ -1455,9 +1468,13 @@ PrefabInstance:
       propertyPath: nodeParent
       value: 
       objectReference: {fileID: 812747724870924004}
+    - target: {fileID: 1699815065132000025, guid: ca14a232cef8e3b49b057ba727feb625, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1699815065286013561, guid: ca14a232cef8e3b49b057ba727feb625, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 350
+      value: 390
       objectReference: {fileID: 0}
     - target: {fileID: 1699815065286013561, guid: ca14a232cef8e3b49b057ba727feb625, type: 3}
       propertyPath: m_LocalScale.x
@@ -1481,13 +1498,27 @@ PrefabInstance:
       objectReference: {fileID: 996544844}
     - target: {fileID: 1699815065463172946, guid: ca14a232cef8e3b49b057ba727feb625, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 275
+      value: 295
       objectReference: {fileID: 0}
     - target: {fileID: 1699815065463172949, guid: ca14a232cef8e3b49b057ba727feb625, type: 3}
       propertyPath: m_text
-      value: "Now, you'll learn about the \"if\" statement!\nThe door here has the
-        following statement: \n\nif(key) {openDoor()}\n\nuse grabItem() on the key,
-        and useItem() on the door!"
+      value: 'Now, you''ll learn about the "if" statement! As the name implies, ifs
+        work like this:
+
+
+        if(true or false) {do or don''t do this}
+
+
+        The
+        door in this level has the following function:
+
+
+        if(player has key)
+        {open the door}
+
+
+        Use the grabItem() function on the key, and the
+        useItem() function on the door to finish this level!'
       objectReference: {fileID: 0}
     - target: {fileID: 1699815065463172949, guid: ca14a232cef8e3b49b057ba727feb625, type: 3}
       propertyPath: m_fontSize
@@ -1513,9 +1544,30 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: ActivateMenus, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 1699815065928954382, guid: ca14a232cef8e3b49b057ba727feb625, type: 3}
+      propertyPath: m_text
+      value: "Try standing next to the key and use:\n   \n   grabItem()\n\nThen,
+        stand by the door and use:\n\n   useItem()"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699815065928954382, guid: ca14a232cef8e3b49b057ba727feb625, type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699815065928954382, guid: ca14a232cef8e3b49b057ba727feb625, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 1699815065949410243, guid: ca14a232cef8e3b49b057ba727feb625, type: 3}
       propertyPath: m_text
       value: --Lesson 3--
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699815065949410243, guid: ca14a232cef8e3b49b057ba727feb625, type: 3}
+      propertyPath: m_fontSize
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699815065949410243, guid: ca14a232cef8e3b49b057ba727feb625, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 1699815066213934589, guid: ca14a232cef8e3b49b057ba727feb625, type: 3}
       propertyPath: m_IsActive
@@ -2491,7 +2543,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-3074
+  m_Name: pb_Mesh-61412
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4061,7 +4113,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh45126
+  m_Name: pb_Mesh57148
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

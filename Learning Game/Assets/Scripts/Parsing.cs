@@ -213,7 +213,7 @@ public class Parsing : MonoBehaviour
             yield return StartCoroutine(player.Say(str));
         }
         //new code from Mus
-        /*
+
         else if (x.Contains("for"))
         {
             int loopNum = getIntParameters(parseParentheses(x));
@@ -244,6 +244,6 @@ public class Parsing : MonoBehaviour
                 player.moveDown(loopNum);
             }
 
-        }*/
+        }
     }
 }
