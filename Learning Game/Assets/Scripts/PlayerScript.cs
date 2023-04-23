@@ -13,11 +13,31 @@ public class PlayerScript : MonoBehaviour
     private bool atEnd = false;
     public Items heldItem;
     public GameObject successMenu;
+
+    //animations
+    public GameObject model;
+    private Animator anim;
     
     // Start is called before the first frame update
     void Start()
     {
         successMenu.SetActive(false);
+
+        anim = model.GetComponent<Animator>();
+        startIdle();
+    }
+
+    private void startIdle()
+    {
+        Debug.Log("Start idle");
+        if(anim != null && anim.GetInteger("AnimationPar") != 0)
+            anim.SetInteger("AnimationPar", 0);
+    }
+    private void startRun()
+    {
+        Debug.Log("Start run");
+        if(anim != null && anim.GetInteger("AnimationPar") != 1)
+            anim.SetInteger("AnimationPar", 1);
     }
 
     // Update is called once per frame
@@ -93,8 +113,10 @@ public class PlayerScript : MonoBehaviour
     //yield return 
     public IEnumerator goToCurrent()
     {
+        
         Debug.Log("Moving from " + gameObject.transform.position + " to " + currentNode.transform.position);
         yield return StartCoroutine(MoveObject(gameObject.transform.position, currentNode.transform.position, 0.5f));
+        
     }
 
     float lerpDuration = 0.5f;
@@ -145,10 +167,12 @@ public class PlayerScript : MonoBehaviour
     public IEnumerator MoveR(int times)
     {
         //yield return StartCoroutine(Rotate90());
+        startRun();
         for (int i = 0; i < times; i++)
         {
             yield return StartCoroutine(MoveR());
         }
+        startIdle();
     }
 
     public IEnumerator MoveL()
@@ -170,10 +194,12 @@ public class PlayerScript : MonoBehaviour
     public IEnumerator MoveL(int times)
     {
         //yield return StartCoroutine(Rotate90());
+        startRun();
         for (int i = 0; i < times; i++)
         {
             yield return StartCoroutine(MoveL());
         }
+        startIdle();
     }
 
     public IEnumerator MoveU()
@@ -195,11 +221,13 @@ public class PlayerScript : MonoBehaviour
     }
     public IEnumerator MoveU(int times)
     {
+        startRun();
         //yield return StartCoroutine(Rotate90());
         for (int i = 0; i < times; i++)
         {
             yield return StartCoroutine(MoveU());
         }
+        startIdle();
     }
 
     public IEnumerator MoveD()
@@ -221,11 +249,13 @@ public class PlayerScript : MonoBehaviour
     }
     public IEnumerator MoveD(int times)
     {
+        startRun();
         //yield return StartCoroutine(Rotate90());
         for (int i = 0; i < times; i++)
         {
             yield return StartCoroutine(MoveD());
         }
+        startIdle();
     }
 
     public IEnumerator GrabItem()
