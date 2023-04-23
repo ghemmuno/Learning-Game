@@ -5969,6 +5969,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hints: {fileID: 1699815064816248527}
   lesson: {fileID: 1699815065898704939}
+  locked: {fileID: 0}
 --- !u!224 &1699815065637977075
 RectTransform:
   m_ObjectHideFlags: 0

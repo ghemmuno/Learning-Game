@@ -182,6 +182,7 @@ public class PlayerScript : MonoBehaviour
     {
         if (currentNode.hasItem())
         {
+            heldItem.simpleKey.SetActive(false);
             heldItem = currentNode.item;
             heldItem.onGrid = false;
             heldItem.isHeld = true;
