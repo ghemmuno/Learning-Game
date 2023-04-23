@@ -7,7 +7,6 @@ public abstract class Items : MonoBehaviour
     //VARIABLES
     //Distinguish item type, used to determine if an item can interact with an event
     public string itemName;
-    public GameObject simpleKey;
     //Keep track of the interactions of an item
     public bool onGrid;
     public bool isHeld;
