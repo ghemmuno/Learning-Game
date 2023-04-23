@@ -7,6 +7,6 @@ public class SayDoor : InteractableEvents
     void Start()
     {
         eventName = "password_door";
-        correctItem = "password";
+        correctItem = "Password";
     }
 }
