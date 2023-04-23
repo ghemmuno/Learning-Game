@@ -52,7 +52,10 @@ public class NodeParentScript : MonoBehaviour
         player.goToInstantly();
         if (player.holdingItem())
         {
+<<<<<<< HEAD
             //player.heldItem.simpleKey.SetActive(true);
+=======
+>>>>>>> parent of 6b42fe7 (lord help me)
             player.heldItem.resetItem();
             player.heldItem = null;
             NodeScript temp = null;
