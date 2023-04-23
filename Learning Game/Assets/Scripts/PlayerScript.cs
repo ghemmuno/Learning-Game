@@ -1,8 +1,10 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -55,7 +57,31 @@ public class PlayerScript : MonoBehaviour
             useItem();
         }
         */
+        Visuals();
     }
+
+    public int directionX = 1;
+    public int directionZ = 0;
+    private void setDirXZ(int x, int z)
+    {
+        directionX = x;
+        directionZ = z;
+    }
+
+    //rotation
+    private void Visuals()
+    {
+        float rotSpeed = 5f;
+        Vector3 lookAt = currentNode.transform.position;
+        lookAt.x += directionX;
+        lookAt.z += directionZ;
+        Vector3 dir = lookAt - transform.position;
+        Quaternion rot = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), rotSpeed * Time.deltaTime);
+        rot.x = 0;
+        rot.z = 0;
+        transform.rotation = rot;
+    }
+
 
     public bool holdingItem()
     {
@@ -71,16 +97,22 @@ public class PlayerScript : MonoBehaviour
         yield return StartCoroutine(MoveObject(gameObject.transform.position, currentNode.transform.position, 0.5f));
     }
 
-    private IEnumerator LookAt()
+    float lerpDuration = 0.5f;
+    bool rotating = false;
+    private IEnumerator Rotate90()
     {
-        float speed = 1f;
-        float time = 0;
-        while(time < 1)
+        rotating = true;
+        float timeElapsed = 0;
+        Quaternion startRotation = transform.rotation;
+        Quaternion targetRotation = transform.rotation * Quaternion.Euler(0, 90, 0);
+        while (timeElapsed < lerpDuration)
         {
-            Quaternion lookRotation = Quaternion.LookRotation(currentNode.transform.position - transform.position);
-            time += Time.deltaTime * speed;
+            transform.rotation = Quaternion.Slerp(startRotation, targetRotation, timeElapsed / lerpDuration);
+            timeElapsed += Time.deltaTime;
             yield return null;
         }
+        transform.rotation = targetRotation;
+        rotating = false;
     }
 
     IEnumerator MoveObject(Vector3 source, Vector3 target, float overTime)
@@ -96,6 +128,7 @@ public class PlayerScript : MonoBehaviour
 
     public IEnumerator MoveR()
     {
+        setDirXZ(0, -1);
         if (!atEnd)
         {
             if (currentNode.right != null && !currentNode.isEndingNode && currentNode.right.canVisit())
@@ -111,6 +144,7 @@ public class PlayerScript : MonoBehaviour
     }
     public IEnumerator MoveR(int times)
     {
+        //yield return StartCoroutine(Rotate90());
         for (int i = 0; i < times; i++)
         {
             yield return StartCoroutine(MoveR());
@@ -119,6 +153,7 @@ public class PlayerScript : MonoBehaviour
 
     public IEnumerator MoveL()
     {
+        setDirXZ(0, 1);
         if (!atEnd)
         {
             if (currentNode.left != null && !currentNode.isEndingNode && currentNode.left.canVisit())
@@ -134,6 +169,7 @@ public class PlayerScript : MonoBehaviour
     }
     public IEnumerator MoveL(int times)
     {
+        //yield return StartCoroutine(Rotate90());
         for (int i = 0; i < times; i++)
         {
             yield return StartCoroutine(MoveL());
@@ -142,6 +178,7 @@ public class PlayerScript : MonoBehaviour
 
     public IEnumerator MoveU()
     {
+        setDirXZ(1, 0);
         if (!atEnd)
         {
             //Debug.Log((currentNode.up != null) + " " + (!currentNode.isEndingNode) + " " + (currentNode.up.canVisit()));
@@ -158,6 +195,7 @@ public class PlayerScript : MonoBehaviour
     }
     public IEnumerator MoveU(int times)
     {
+        //yield return StartCoroutine(Rotate90());
         for (int i = 0; i < times; i++)
         {
             yield return StartCoroutine(MoveU());
@@ -166,8 +204,10 @@ public class PlayerScript : MonoBehaviour
 
     public IEnumerator MoveD()
     {
+        setDirXZ(-1, 0);
         if (!atEnd)
         {
+            //yield return StartCoroutine(LookAt());
             if (currentNode.down != null && !currentNode.isEndingNode && currentNode.down.canVisit())
             {
                 currentNode = currentNode.down;
@@ -181,6 +221,7 @@ public class PlayerScript : MonoBehaviour
     }
     public IEnumerator MoveD(int times)
     {
+        //yield return StartCoroutine(Rotate90());
         for (int i = 0; i < times; i++)
         {
             yield return StartCoroutine(MoveD());
@@ -223,7 +264,6 @@ public class PlayerScript : MonoBehaviour
     public IEnumerator Say(string words)
     {
         Debug.Log("Say is called: " + words);
-        //Debug.Log("Say is called: " + words);
         NodeScript eNode = currentNode.checkForEvent();
 
         if (eNode != null)
