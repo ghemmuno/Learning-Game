@@ -12,13 +12,12 @@ public class NodeParentScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        children = this.gameObject.GetComponentsInChildren<NodeScript>();
-        /* debug printing
+        children = gameObject.GetComponentsInChildren<NodeScript>();
         for (int i = 0; i < children.Length; i++)
         {
             NodeScript child = children[i];
             //Debug.Log(child.name);
-        }*/
+        }
 
         startNode.isStartingNode = true;
         endNode.isEndingNode = true;
@@ -46,6 +45,11 @@ public class NodeParentScript : MonoBehaviour
         
     }
 
+    void printChildren()
+    {
+
+    }
+
     public void resetPlayer()
     {
         player.currentNode = startNode;
@@ -56,15 +60,13 @@ public class NodeParentScript : MonoBehaviour
             player.heldItem.resetItem();
             player.heldItem = null;
             NodeScript temp = null;
-            foreach(NodeScript child in children)
+
+            for (int i = 0; i < children.Length; i++)
             {
-                if(child != null)
+                if (children[i].hasInteractEvent())
                 {
-                    temp = child.checkForEvent();
-                    if (temp != null)
-                    {
-                        temp.interactEvent.Reset();
-                    }
+                    children[i].interactEvent.Reset();
+                    children[i].setVisit(false);
                 }
             }
         }
